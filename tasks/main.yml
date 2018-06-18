@@ -1,0 +1,7 @@
+- name: modify rustup-init.sh
+  action: template src=root/rustup-init.sh dest=/root/rustup-init.sh
+  register: rustup-init
+
+- command: /root/rustup-init.sh
+  when: rustup-init
+
